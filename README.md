@@ -2,15 +2,15 @@
 
 Login
 
-if(login=userAccount)    -> Check-in  -> Check-out
-                         -> Work Sheet (view)
-                         -> Request  -> Enter information of request
-                         -> Time-off (view)
+if(login=userAccount)    1-> Check-in  -> Check-out
+                         2-> Work Sheet (view)
+                         3-> Request  -> Enter information of request
+                         4-> Time-off (view)
                          
-if(login=managerAccount) -> Time Sheet
-                         -> Pending requests -> Approve
+if(login=managerAccount) 1-> Time Sheet
+                         2-> Pending requests -> Approve
                                              -> Decline 
-                         -> Time-off
+                         3-> Time-off
                          
                          
                          
