@@ -13,9 +13,13 @@
     </head>
     <body>
         <form action="home" method="POST">
+            <h2>Check-in</h2>
             <input type="submit" value="Check-in" name="Check-in" /> <br/>
+            <h2>Work Sheet</h2>
             <input type="submit" value="Work Sheet" name="Work Sheet" /> <br/>
+            <h2>Request</h2>
             <input type="submit" value="Request" name="Request" /> <br/>
+            <h2>Time-off</h2>
             <input type="submit" value="Time-off" name="Time-off" />
         </form>
     </body>

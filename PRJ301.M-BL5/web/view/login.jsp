@@ -13,11 +13,30 @@
     </head>
     <body>
         <form action="login" method="POST">
-            Username: <input type="text" name="username" /> <br/>
-            Password: <input type="password" name="password" /> <br/>
-            <input type="submit" value="Login" /> <br/>
-            <a href="forget">Forget password?</a>
+            <div style="width:300px; margin: auto;">
+            <h1>Login</h1>
+
+            <div class='row'>
+
+                <div class='label'>Username</div>
+                <div class='input'><input type='text' name='username' placeholder='Your username'></div>
+
+            </div><br/>
+
+            <div class='row'>
+
+                <div class='label'>Password</div>
+                <div class='input'><input type='password' id='login-password' name='password' placeholder='Your password'></div>
+
+            </div><br/>
             
+            
+            <input type="submit" value="Login" /> <br/> <br/>
+            <a href="#">Forget password?</a>
+            
+            <a href="home">Home</a>
+            
+            </div>
         </form>
     </body>
 </html>
