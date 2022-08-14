@@ -28,7 +28,7 @@ public class LoginController extends HttpServlet {
         Account account = db.getAccount(username, password);
         if(account!=null)
         {
-            req.getRequestDispatcher("view/home.jsp").forward(req, resp);
+            req.getRequestDispatcher("view/manager.jsp").forward(req, resp);
         }
         else
         {
