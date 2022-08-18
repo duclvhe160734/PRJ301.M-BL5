@@ -34,8 +34,6 @@
             <input type="submit" value="Login" /> <br/> <br/>
             <a href="#">Forget password?</a>
             
-            <a href="home">Home</a>
-            
             </div>
             
         </form>
