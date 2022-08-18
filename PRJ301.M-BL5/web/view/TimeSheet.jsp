@@ -71,6 +71,7 @@
                     <input type="submit" value="Search" /> 
                 </div>
                 <br/>
+                
                 <h1 class="TimeSheet">Time Sheet</h1>
 
                 <tr>

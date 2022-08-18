@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<!DOCTYPE html>
+<%-- 
+    Document   : salary
+    Created on : Aug 18, 2022, 7:40:03 PM
+    Author     : Viet Duc
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <head>
     <style>
         table{
