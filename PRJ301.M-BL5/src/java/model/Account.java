@@ -4,16 +4,22 @@
  */
 package model;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Viet Duc
  */
-public class Account {
+class Account {
+    private int aid;
     private String username;
     private String password;
-    private String answer;    
+
+    public int getAid() {
+        return aid;
+    }
+
+    public void setAid(int aid) {
+        this.aid = aid;
+    }
 
     public String getUsername() {
         return username;
@@ -30,14 +36,6 @@ public class Account {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
     
-            
+    
 }
