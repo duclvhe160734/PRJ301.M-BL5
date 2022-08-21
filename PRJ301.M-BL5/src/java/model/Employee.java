@@ -11,7 +11,19 @@ package model;
 public class Employee {
     private int eid;
     private String ename;
-    private int workday;
+    private String position;
+    private WorkDay wid;
+    private String note;
+    private Salary salary;
+
+    public Salary getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Salary salary) {
+        this.salary = salary;
+    }
+    
 
     public int getEid() {
         return eid;
@@ -29,12 +41,30 @@ public class Employee {
         this.ename = ename;
     }
 
-    public int getWorkday() {
-        return workday;
+    public String getPosition() {
+        return position;
     }
 
-    public void setWorkday(int workday) {
-        this.workday = workday;
+    public void setPosition(String position) {
+        this.position = position;
     }
+
+    public WorkDay getWid() {
+        return wid;
+    }
+
+    public void setWid(WorkDay wid) {
+        this.wid = wid;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+    
+    
 
 }

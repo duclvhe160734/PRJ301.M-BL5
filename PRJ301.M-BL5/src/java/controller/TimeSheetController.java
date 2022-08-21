@@ -4,11 +4,14 @@
  */
 package controller;
 
+import dal.EmployeeDBContext;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import model.Employee;
 
 /**
  *
@@ -32,7 +35,10 @@ public class TimeSheetController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        //
+        EmployeeDBContext em = new EmployeeDBContext();
+        ArrayList<Employee> emps = em.getEmps();
+        request.setAttribute("emps", emps);
         request.getRequestDispatcher("view/TimeSheet.jsp").forward(request, response);
 
     }
@@ -43,11 +49,6 @@ public class TimeSheetController extends HttpServlet {
         request.getRequestDispatcher("view/TimeSheet.jsp").forward(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

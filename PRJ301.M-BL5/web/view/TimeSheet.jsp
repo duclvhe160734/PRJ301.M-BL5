@@ -4,17 +4,18 @@
     Author     : Viet Duc
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
     <head>
         <style>
-            
+
             .fullscreen{
                 width:100%;
             }
-            
+
             .table{
                 width: 100%;
                 text-align: center;
@@ -38,19 +39,20 @@
 
     </head>
 
-        <body>
+    <body>
+        <form>
             <div class = fullscreen>
                 <table class="table">
                     <h1 class="TimeSheet">Time Sheet</h1>
 
-                    
-                    
-                   
+
+
+
                     <tr>
                         <td rowspan="3"><strong>No.</strong></td>
                         <td rowspan="3"><strong>Name</strong></td>
                         <td rowspan="3"><strong>Position</strong></td>
-                        <td colspan="31" style="font-family:courier;"><strong>Days in Month</td>
+                        <td colspan="31" style="font-family:courier;"> [<]        Days in /Month/         [>]</td>
                         <td rowspan="3"><strong>Total WorkDay</strong></td>
                         <td rowspan="3"><strong>Note</strong></td>
                     </tr>
@@ -122,89 +124,54 @@
                         <td>Tu</td>
                         <td>We</td>
                     </tr>
-                    
-                    <tr style="font-family:courier;">
-                        <td>No.1</td>
-                        <td>Le Viet Duc</td>
-                        <td>Manager</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.5</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.5</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>18</td>
-                        <td></td>
-                    </tr>
-                    
-                    <tr style="font-family:courier;">
-                        <td>No.2</td>
-                        <td>Phung Viet Khoi</td>
-                        <td>Employee</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.5</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>17.5</td>
-                        <td></td>
-                    </tr>
+
+                    <c:forEach items="${requestScope.emps}" var="e">
+                        <tr style="font-family:courier;">
+                            <td>No.${e.eid}</td>
+                            <td>${e.ename}</td>
+                            <td>${e.position}</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0.5</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0.5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>total</td>
+                            <td></td>
+                        </tr>
+                    </c:forEach>
 
 
 
                 </table>
             </div>
-        </body>
 
-    </html>
+        </form>
+    </body>
+
+</html>
