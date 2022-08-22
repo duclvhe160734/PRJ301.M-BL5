@@ -57,13 +57,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <h1 class="TimeSheet">Request</h1><br/>
 
             <tr>
-                <td>No.</td>
-                <td>Name</td>
-                <td>Position</td>
-                <td>Date</td>
-                <td>Type</td>
-                <td>Reason</td>
-                <td>Status</td>
+                <td></td>
+                <c:forEach items="${requestScope.dates}" var="d">
+                    <td
+                        >
+                        <fmt:formatDate pattern = "dd" 
+                                        value = "${d}" /> <br/>
+                        <fmt:formatDate pattern = "EEE" 
+                                        value = "${d}" />
+                    </td>
+                </c:forEach>
+                <td>Hours</td>
+                <td>Days</td>
+                <td>Sicks</td>
             </tr>
             
             <tr>
@@ -83,16 +89,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 <td>16/08/2022-18/08/2022</td>
                 <td>Overtime Work</td>
                 <td>I want to work more</td>
-                <td>Accept / Deny</td>
-            </tr>
-            
-            <tr>
-                <td>No.3</td>
-                <td>Luu Minh Huong</td>
-                <td>Employee</td>
-                <td>20/08/2022-21/08/2022</td>
-                <td>Off Work</td>
-                <td>Pregnant</td>
                 <td>Accept / Deny</td>
             </tr>
             

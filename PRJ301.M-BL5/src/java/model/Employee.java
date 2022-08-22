@@ -12,7 +12,6 @@ public class Employee {
     private int eid;
     private String ename;
     private String position;
-    private WorkDay wid;
     private String note;
     private Salary salary;
 
@@ -47,14 +46,6 @@ public class Employee {
 
     public void setPosition(String position) {
         this.position = position;
-    }
-
-    public WorkDay getWid() {
-        return wid;
-    }
-
-    public void setWid(WorkDay wid) {
-        this.wid = wid;
     }
 
     public String getNote() {

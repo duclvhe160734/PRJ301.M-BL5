@@ -19,19 +19,32 @@
             .table{
                 width: 100%;
                 text-align: center;
-                border:1px;
-                border-collapse: collapse;
+                border-collapse: var;
             }
 
             td{
                 padding:5px;
-                border:1px solid beige;
+                border:1px solid darkgreen;
             }
 
-            .TimeSheet{
-                text-align: center;
-                color: red;
+            .line1{
+                padding-left: 40px;
+                color: indigo;
                 font-size:300%;
+                font-family: serif;
+                background-color: #f1f1f1;
+                border: 2px;
+                border-color: red;
+            }
+
+            .line2{
+                color: indigo;
+            }
+
+            .line3{
+                margin-top: 10px;
+                padding-top: 10px;
+                background-size: 10px;
             }
 
         </style>
@@ -41,21 +54,34 @@
 
     <body>
         <form>
+
             <div class = fullscreen>
+
                 <table class="table">
-                    <h1 class="TimeSheet">Time Sheet</h1>
+
+                    <div class="line1" >- Time Sheet -</div><br/> <hr><br/>
+
+                    <div class = "line2" action="search" method="POST">
+
+                        Employee Name: <input type="text" name="SearchByName"/> 
+                        <input type="submit" value="Search" name="Search" style="font-family: var; background-color: bisque;" />
+
+                    </div><br/><hr>
 
 
-
-
-                    <tr>
+                    <tr class = "line3" style="background-color: cornsilk">
                         <td rowspan="3"><strong>No.</strong></td>
                         <td rowspan="3"><strong>Name</strong></td>
                         <td rowspan="3"><strong>Position</strong></td>
-                        <td colspan="31" style="font-family:courier;"> [<]        Days in /Month/         [>]</td>
-                        <td rowspan="3"><strong>Total WorkDay</strong></td>
-                        <td rowspan="3"><strong>Note</strong></td>
+                        <td   style="background-color: antiquewhite" colspan="31" style="font-family:courier;">
+                            Days in | August | 
+                        </td>
+                        <td rowspan="3"><strong>Worked Days</strong></td>
+                        <td rowspan="3"><strong>Absent</strong></td>
+                        <td rowspan="3"><strong>Permission</strong></td>
+                        <td rowspan="3"><strong>Late</strong></td>
                     </tr>
+
 
                     <tr style="font-family:courier;">
                         <td>1</td>
@@ -80,7 +106,7 @@
                         <td>20</td>
                         <td>21</td>
                         <td>22</td>
-                        <td>23</td>
+                        <td style="background-color: aqua">23</td>
                         <td>24</td>
                         <td>25</td>
                         <td>26</td>
@@ -135,20 +161,20 @@
                             <td>1</td>
                             <td>1</td>
                             <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0.5</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0.5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -163,12 +189,24 @@
                             <td></td>
                             <td>total</td>
                             <td></td>
+                            <td></td>
+                            <td></td>
+
                         </tr>
                     </c:forEach>
 
 
+                    <c:forEach items="${requestScope.stus}" var="s">
+                        <tr>
+                            <td>${s.eid}</td>
+                            <td>${s.ename}</td>
+                            <td>${s.position}</td>
+                        </tr>
+                    </c:forEach>
+
 
                 </table>
+
             </div>
 
         </form>
