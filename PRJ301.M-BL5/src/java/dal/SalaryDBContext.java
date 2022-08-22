@@ -25,10 +25,10 @@ public class SalaryDBContext extends DBContext {
 
         try {
             String sql = "select e.eid, e.ename,e.position, \n"
-                    + "s.salary,s.bonus,s.deduction\n"
-                    + "from employee e\n"
-                    + "left join salary s\n"
-                    + "on e.eid = s.eid";
+                    + "                   s.basic,s.bonus,s.deduction\n"
+                    + "                from employee e\n"
+                    + "                    left join salary s\n"
+                    + "                   on e.sid = s.sid";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
 
@@ -39,16 +39,16 @@ public class SalaryDBContext extends DBContext {
 
                 getEmps.setEname(rs.getString("ename"));
                 getEmps.setPosition(rs.getString("position"));
-                getEmps.setEid(rs.getInt("eid"));
+                
+                getSa.setSid(rs.getInt("sid"));
 
-                getSa.setSalary(rs.getInt("salary"));
+                getSa.getBasic();
                 getSa.setBonus(rs.getInt("bonus"));
                 getSa.setDeduction(rs.getInt("deduction"));
-                
-                getEmps.setSalary(getSa);
-                
+
+//                getSa.getBasic(getEmps);
                 emps.add(getEmps);
-                
+
             }
             return emps;
 
@@ -59,15 +59,14 @@ public class SalaryDBContext extends DBContext {
 
         return null;
     }
-    
-        public static void main(String[] args) {
-        
+
+    public static void main(String[] args) {
+
         SalaryDBContext e = new SalaryDBContext();
         ArrayList<Employee> emps = e.getSa();
         for (Employee emp : emps) {
-            System.out.println(emp.getSalary().getBonus());
+//            System.out.println(emp.getSalary().getBonus());
         }
-        }
-    
-    
+    }
+
 }

@@ -10,13 +10,10 @@ package model;
  */
 public class Salary {
     private int sid;
-    private Employee eid;
-    private int salary;
-    private int deduction;
+    private int basic;
     private int bonus;
-    
-    
-    
+    private int deduction;
+
     public int getSid() {
         return sid;
     }
@@ -25,20 +22,20 @@ public class Salary {
         this.sid = sid;
     }
 
-    public Employee getEid() {
-        return eid;
+    public int getBasic() {
+        return basic;
     }
 
-    public void setEid(Employee eid) {
-        this.eid = eid;
+    public void setBasic(int basic) {
+        this.basic = basic;
     }
 
-    public int getSalary() {
-        return salary;
+    public int getBonus() {
+        return bonus;
     }
 
-    public void setSalary(int salary) {
-        this.salary = salary;
+    public void setBonus(int bonus) {
+        this.bonus = bonus;
     }
 
     public int getDeduction() {
@@ -49,13 +46,6 @@ public class Salary {
         this.deduction = deduction;
     }
 
-    public int getBonus() {
-        return bonus;
-    }
-
-    public void setBonus(int bonus) {
-        this.bonus = bonus;
-    }
     
     
 }

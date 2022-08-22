@@ -16,11 +16,13 @@ import model.Employee;
  *
  * @author Viet Duc
  */
-public class SearchDBContext extends DBContext{
+public class SearchDBContext extends DBContext {
+
     public ArrayList<Employee> searchByName(String name) {
         ArrayList<Employee> stus = new ArrayList<>();
         try {
-                String sql = "select sid, name, gender, dob from Student where name like '%"+name+"%'";
+            String sql = "select eid, ename, position\n"
+                    + "from employee where ename like '%"+name+"%'";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {

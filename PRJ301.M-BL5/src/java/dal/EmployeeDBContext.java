@@ -20,15 +20,12 @@ public class EmployeeDBContext extends DBContext {
 
     public ArrayList<Employee> getEmps() {
         ArrayList<Employee> emps = new ArrayList<>();
-
         try {
             String sql = "select e.eid, e.ename, e.position\n"
                     + "from employee e\n";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
-            
             //
-            
             while (rs.next()) {
                 Employee getEmps = new Employee();
                 getEmps.setEname(rs.getString("ename"));
@@ -37,14 +34,10 @@ public class EmployeeDBContext extends DBContext {
                 emps.add(getEmps);
             }
                 return emps;
-
         } 
-        
-        //
         catch (SQLException ex) {
             Logger.getLogger(EmployeeDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         return null;
     }       
     

@@ -12,17 +12,7 @@ public class Employee {
     private int eid;
     private String ename;
     private String position;
-    private String note;
-    private Salary salary;
-
-    public Salary getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Salary salary) {
-        this.salary = salary;
-    }
-    
+    private Salary sid;
 
     public int getEid() {
         return eid;
@@ -48,13 +38,15 @@ public class Employee {
         this.position = position;
     }
 
-    public String getNote() {
-        return note;
+    public Salary getSid() {
+        return sid;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setSid(Salary sid) {
+        this.sid = sid;
     }
+    
+    
     
     
 

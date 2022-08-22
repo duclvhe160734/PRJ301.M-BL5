@@ -63,8 +63,8 @@
 
                     <div class = "line2" action="search" method="POST">
 
-                        Employee Name: <input type="text" name="SearchByName"/> 
-                        <input type="submit" value="Search" name="Search" style="font-family: var; background-color: bisque;" />
+                        Employee Name: <input type="text" name="name"/> 
+                        <input type="submit" value="Search" style="font-family: var; background-color: bisque;" />
 
                     </div><br/><hr>
 
@@ -140,7 +140,7 @@
                         <td>Sa</td>
                         <td>Su</td>
                         <td>Mo</td>
-                        <td>Tu</td>
+                        <td style="background-color: aqua">Tu</td>
                         <td>We</td>
                         <td>Th</td>
                         <td>Fr</td>
@@ -156,28 +156,98 @@
                             <td>No.${e.eid}</td>
                             <td>${e.ename}</td>
                             <td>${e.position}</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+
+                            <c:if test="${e.eid eq 1 }">
+                                <c:forEach items="${requestScope.aug1}" var="a">
+                                    <td>
+                                        ${a.status}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+
+                            <c:if test="${e.eid eq 2 }">
+                                <c:forEach items="${requestScope.aug2}" var="a">
+                                    <td>
+                                        ${a.status}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+
+                            <c:if test="${e.eid eq 3 }">
+                                <c:forEach items="${requestScope.aug3}" var="a">
+                                    <td>
+                                        ${a.status}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+
+                            <c:if test="${e.eid eq 4 }">
+                                <c:forEach items="${requestScope.aug4}" var="a">
+                                    <td>
+                                        ${a.status}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+
+                            <c:if test="${e.eid eq 5 }">
+                                <c:forEach items="${requestScope.aug5}" var="a">
+                                    <td>
+                                        ${a.status}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+
+                            <c:if test="${e.eid eq 6 }">
+                                <c:forEach items="${requestScope.aug6}" var="a">
+                                    <td>
+                                        ${a.status}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+
+                            <c:if test="${e.eid eq 7 }">
+                                <c:forEach items="${requestScope.aug7}" var="a">
+                                    <td>
+                                        ${a.status}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+
+                            <c:if test="${e.eid eq 8 }">
+                                <c:forEach items="${requestScope.aug8}" var="a">
+                                    <td>
+                                        ${a.status}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+
+                            <c:if test="${e.eid eq 9 }">
+                                <c:forEach items="${requestScope.aug9}" var="a">
+                                    <td>
+                                        ${a.status}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+
+                            <c:if test="${e.eid eq 10 }">
+                                <c:forEach items="${requestScope.aug10}" var="a">
+                                    <td>
+                                        ${a.status}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+
+
                             <td></td>
                             <td></td>
                             <td></td>
