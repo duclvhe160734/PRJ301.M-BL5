@@ -57,19 +57,27 @@
                 </tr>
 
                 <c:forEach items="${requestScope.emps}" var="e">
-
                     <tr style="font-family:courier;">
                         <td><b>${e.eid}</b></td>
                         <td><b>${e.ename}</b></td>
                         <td><b>${e.position}</b></td>
+                        
+                        
+                        <c:if test="${e.eid eq 1 }">
+                                <c:forEach items="${requestScope.sal}" var="s">
+                                    <td>
+                                        ${s.basic}
+                                    </td> 
+                                </c:forEach>
+
+                            </c:if>
+                        
                         <td><b>${e.salary.salary}(vnd)</b></td>    
                         <td><b>Total Workday</b></td>
                         <td><b>${e.salary.bonus}(vnd)</b></td>
                         <td><b>${e.salary.deduction}(vnd)</b></td>
                         <td><b>Net Salary</b></td>
                     </tr>
-
-
                 </c:forEach>
 
 

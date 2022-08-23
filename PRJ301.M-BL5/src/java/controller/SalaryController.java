@@ -49,11 +49,14 @@ public class SalaryController extends HttpServlet {
             throws ServletException, IOException {
         
         
-        SalaryDBContext s = new SalaryDBContext();
-        
-        
-        ArrayList<Employee> emps = s.getSa();
+        EmployeeDBContext em = new EmployeeDBContext();
+        ArrayList<Employee> emps = em.getEmps();
         request.setAttribute("emps", emps);
+        
+        
+        SalaryDBContext s = new SalaryDBContext();
+        ArrayList<Salary> sal = s.getSa();
+        request.setAttribute("sal", sal);
         request.getRequestDispatcher("view/salary.jsp").forward(request, response);
         
     }

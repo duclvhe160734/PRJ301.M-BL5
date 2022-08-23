@@ -23,7 +23,7 @@
             }
 
             td{
-                padding:5px;
+                padding:2px;
                 border:1px solid darkgreen;
             }
 
@@ -59,11 +59,14 @@
 
                 <table class="table">
 
-                    <div class="line1" >- Time Sheet -</div><br/> <hr><br/>
+                    <div class="line1" >Time Sheet</div><br/> <hr><br/>
 
                     <div class = "line2" action="search" method="POST">
 
                         Employee Name: <input type="text" name="name"/> 
+                        <input type="submit" value="Search" style="font-family: var; background-color: bisque;" />
+                        &emsp;
+                        Position: <input type="text" name="pos"/> 
                         <input type="submit" value="Search" style="font-family: var; background-color: bisque;" />
 
                     </div><br/><hr>
@@ -77,9 +80,9 @@
                             Days in | August | 
                         </td>
                         <td rowspan="3"><strong>Worked Days</strong></td>
-                        <td rowspan="3"><strong>Absent</strong></td>
-                        <td rowspan="3"><strong>Permission</strong></td>
                         <td rowspan="3"><strong>Late</strong></td>
+                        <td rowspan="3"><strong>Permission</strong></td>
+                        <td rowspan="3"><strong>Absent</strong></td>
                     </tr>
 
 
@@ -151,12 +154,15 @@
                         <td>We</td>
                     </tr>
 
+
+                    <!-- lấy tên, vị trí nhân viên-->
                     <c:forEach items="${requestScope.emps}" var="e">
                         <tr style="font-family:courier;">
                             <td>No.${e.eid}</td>
                             <td>${e.ename}</td>
                             <td>${e.position}</td>
 
+                            <!--lấy số ngày công-->
                             <c:if test="${e.eid eq 1 }">
                                 <c:forEach items="${requestScope.aug1}" var="a">
                                     <td>
@@ -247,20 +253,266 @@
 
                             </c:if>
 
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
 
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>total</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <!--số ngày có mặt-->
+                            <c:if test="${e.eid eq 1 }">
+                                <td>
+                                    ${requestScope.count1}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 2 }">
+                                <td>
+                                    ${requestScope.count2}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 3 }">
+                                <td>
+                                    ${requestScope.count3}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 4 }">
+                                <td>
+                                    ${requestScope.count4}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 5 }">
+                                <td>
+                                    ${requestScope.count5}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 6 }">
+                                <td>
+                                    ${requestScope.count6}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 7 }">
+                                <td>
+                                    ${requestScope.count7}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 8 }">
+                                <td>
+                                    ${requestScope.count8}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 9 }">
+                                <td>
+                                    ${requestScope.count9}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 10 }">
+                                <td>
+                                    ${requestScope.count1}
+                                </td> 
+                            </c:if>
+
+
+                            <!--số ngày đi muộn--> 
+                            <c:if test="${e.eid eq 1 }">
+                                <td>
+                                    ${requestScope.countm1}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 2 }">
+                                <td>
+                                    ${requestScope.countm2}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 3 }">
+                                <td>
+                                    ${requestScope.countm3}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 4 }">
+                                <td>
+                                    ${requestScope.countm4}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 5 }">
+                                <td>
+                                    ${requestScope.countm5}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 6 }">
+                                <td>
+                                    ${requestScope.countm6}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 7 }">
+                                <td>
+                                    ${requestScope.countm7}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 8 }">
+                                <td>
+                                    ${requestScope.countm8}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 9 }">
+                                <td>
+                                    ${requestScope.countm9}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 10 }">
+                                <td>
+                                    ${requestScope.countm10}
+                                </td> 
+                            </c:if>
+
+
+
+
+                            <!--số ngày nghỉ không phép-->
+                            <c:if test="${e.eid eq 1 }">
+                                <td>
+                                    ${requestScope.countk1}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 2 }">
+                                <td>
+                                    ${requestScope.countk2}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 3 }">
+                                <td>
+                                    ${requestScope.countk3}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 4 }">
+                                <td>
+                                    ${requestScope.countk4}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 5 }">
+                                <td>
+                                    ${requestScope.countk5}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 6 }">
+                                <td>
+                                    ${requestScope.countk6}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 7 }">
+                                <td>
+                                    ${requestScope.countk7}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 8 }">
+                                <td>
+                                    ${requestScope.countk8}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 9 }">
+                                <td>
+                                    ${requestScope.countk9}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 10 }">
+                                <td>
+                                    ${requestScope.countk10}
+                                </td> 
+                            </c:if>
+
+
+
+                            <!--số ngày nghỉ có phép-->
+                            <c:if test="${e.eid eq 1 }">
+                                <td>
+                                    ${requestScope.countp1}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 2 }">
+                                <td>
+                                    ${requestScope.countp2}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 3 }">
+                                <td>
+                                    ${requestScope.countp3}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 4 }">
+                                <td>
+                                    ${requestScope.countp4}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 5 }">
+                                <td>
+                                    ${requestScope.countp5}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 6 }">
+                                <td>
+                                    ${requestScope.countp6}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 7 }">
+                                <td>
+                                    ${requestScope.countp7}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 8 }">
+                                <td>
+                                    ${requestScope.countp8}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 9 }">
+                                <td>
+                                    ${requestScope.countp9}
+                                </td> 
+                            </c:if>
+
+                            <c:if test="${e.eid eq 10 }">
+                                <td>
+                                    ${requestScope.countp10}
+                                </td> 
+                            </c:if>
+
 
                         </tr>
                     </c:forEach>
@@ -274,6 +526,25 @@
                         </tr>
                     </c:forEach>
 
+
+
+                </table>
+
+                <br/>
+                <br/>
+                <br/>
+                
+                
+                
+                
+                <table style=" padding-left: 362px;">
+                    <td colspan="3" style="font-size: 12px; text-align: left; ">
+                        <div style="font-family:courier;">c : present</div>
+                        <div style="font-family:courier;">k : absent</div>
+                        <div style="font-family:courier;">m : late for work</div>
+                        <div style="font-family:courier;">p : absent but with permission</div>
+
+                    </td>
 
                 </table>
 

@@ -19,39 +19,32 @@ import model.Salary;
  */
 public class SalaryDBContext extends DBContext {
 
-    public ArrayList<Employee> getSa() {
+    public ArrayList<Salary> getSa() {
 
-        ArrayList<Employee> emps = new ArrayList<>();
+        ArrayList<Salary> sal = new ArrayList<>();
 
         try {
             String sql = "select e.eid, e.ename,e.position, \n"
-                    + "                   s.basic,s.bonus,s.deduction\n"
-                    + "                from employee e\n"
-                    + "                    left join salary s\n"
-                    + "                   on e.sid = s.sid";
+                    + "s.basic,s.bonus,s.deduction\n"
+                    + "from employee e\n"
+                    + "left join salary s\n"
+                    + "on e.sid = s.sid";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
 
             //
             while (rs.next()) {
-                Employee getEmps = new Employee();
                 Salary getSa = new Salary();
-
-                getEmps.setEname(rs.getString("ename"));
-                getEmps.setPosition(rs.getString("position"));
                 
-                getSa.setSid(rs.getInt("sid"));
 
-                getSa.getBasic();
+                getSa.setBasic(rs.getInt("basic"));
                 getSa.setBonus(rs.getInt("bonus"));
                 getSa.setDeduction(rs.getInt("deduction"));
 
-//                getSa.getBasic(getEmps);
-                emps.add(getEmps);
-
+                sal.add(getSa);
+                
             }
-            return emps;
-
+            return sal;
         } //
         catch (SQLException ex) {
             Logger.getLogger(EmployeeDBContext.class.getName()).log(Level.SEVERE, null, ex);
@@ -63,9 +56,9 @@ public class SalaryDBContext extends DBContext {
     public static void main(String[] args) {
 
         SalaryDBContext e = new SalaryDBContext();
-        ArrayList<Employee> emps = e.getSa();
-        for (Employee emp : emps) {
-//            System.out.println(emp.getSalary().getBonus());
+        ArrayList<Salary> emps = e.getSa();
+        for (Salary emp : emps) {
+            System.out.println(emp.getDeduction());
         }
     }
 
